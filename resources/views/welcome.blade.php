@@ -21,7 +21,7 @@
                 height: 100vh;
                 margin: 0;
             }
-            
+
             .full-height {
                 height: 85vh;
             }
@@ -30,7 +30,7 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
-                
+
             }
 
             .position-ref {
@@ -45,7 +45,7 @@
 
             .content {
                 text-align: center;
-                
+
             }
 
             .title {
@@ -77,12 +77,12 @@
             }
         </style>
         <style type="text/css">
-            .body {  
+            .body {
                 background-image: url(https://curmat.000webhostapp.com/img/fondoprincipal.jpg);
                 background-size: cover;
                 }
             .resto{
-                
+
             }
         </style>
     </head>
@@ -106,8 +106,8 @@
                             @endauth
                         </div>
                     @endif
-				</li>	
-				
+				</li>
+
 			</header>
                 <nav class="navbar navbar-expand-md navbar-light bg-light" style="position: relative">
                     <a class="navbar-brand" href="#"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-menu-button-wide-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -128,18 +128,18 @@
                     </div>
                 </nav>
             <div class="flex-center position-ref full-height " >
-            
-                    
+
+
                 <div class="content">
                     <h1 class="title m-b-md">
                         ESPE|bares
                     </h1>
-                    
+
                     <div class="portada" style="padding-top: 40px">
                         <h1 style="font-size: 220%">Tu opinión es importante</h1><br>
                         <p>Para poder mejorar en nuestra calidad de atencion al cliente</p>
                         <p>necesitamos tu opiniona continuacion<br>puedes ir al apartado de buzon.</p><br>
-                        
+
                     </div>
                     <a href="{{route('buzons.index')}}" class=" btn btn-warning" style="margin-top: 40px; font-size: 150%"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-mailbox" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
@@ -159,13 +159,13 @@
                     <div class="card" style="width: 25rem;">
                     <h2 class="card-title"><strong>Menus </strong> </h2>
                         <div class="card-body text-left">
-                            
+
                             @foreach($campuses as $campus)
-                                <h3>Campus: {{$campus->nombre}}</h3> 
-                                
+                                <h3>Campus: {{$campus->nombre}}</h3>
+
                                 @foreach($bars as $bar)
                                     @if(strcmp($campus->nombre, $bar->campus->nombre) === 0)
-                                        <h4>&nbsp;&nbsp;&nbsp;&nbsp;  Bar: {{$bar->nombre}}</h4>  
+                                        <h4>&nbsp;&nbsp;&nbsp;&nbsp;  Bar: {{$bar->nombre}}</h4>
                                         @foreach($menus as $menu)
                                             @if(strcmp($bar->nombre, $menu->bar->nombre) === 0)
 
@@ -175,7 +175,7 @@
                                     @endif
                                 @endforeach
                             @endforeach
-                            
+
                         </div>
                     </div>
                 </div>
@@ -184,18 +184,18 @@
                     <h2 class="card-title"><strong>Snacks</strong> </h2>
                         <div class="card-body text-left">
                             @foreach($campuses as $campus)
-                                <h3>Campus: {{$campus->nombre}}</h3> 
-                                
+                                <h3>Campus: {{$campus->nombre}}</h3>
+
                                 @foreach($bars as $bar)
                                     @if(strcmp($campus->nombre, $bar->campus->nombre) === 0)
-                                        <h4>&nbsp;&nbsp;&nbsp;&nbsp; Bar: {{$bar->nombre}}</h4> 
-                                        @php($i=1) 
+                                        <h4>&nbsp;&nbsp;&nbsp;&nbsp; Bar: {{$bar->nombre}}</h4>
+                                        @php($i=1)
                                         @foreach($snacks as $snack)
                                             @if(strcmp($bar->nombre, $snack->bar->nombre) === 0)
-                                                
+
                                                 @if($i<=3)
                                                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;{{$snack->nombre}}: {{$snack->precio}}$ <br>
-                                                    
+
                                                 @endif
                                                 @php($i+=1)
                                             @endif
@@ -204,13 +204,13 @@
                                 @endforeach
                             @endforeach
                             <a href="example" class="btn btn-primary btn-block">Ver mas</a>
-                            
+
                         </div>
                     </div>
                 </div>
 
             </div><br>
-            
+
         </div>
         <div class="footerper"><br><br>
         <div class="row">
@@ -221,15 +221,15 @@
                     <p ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-award-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
   <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-</svg>Accede al buzón de recetas y otros servicios</p>
+</svg> Accede al buzón de recetas y otros servicios</p>
                     <p ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-award-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
   <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-</svg>Califica y reseña recetas</p>
+</svg> Califica y reseña recetas</p>
                     <p ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-award-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
   <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-</svg>Recibe el boletín mensual con recetas y ofertas</p>
+</svg> Recibe el boletín mensual con recetas y ofertas</p>
                 </ul>
                 <button class="btn btn-primary">DOWNLOAD APP</button>
             </div>
@@ -240,7 +240,7 @@
                         <th scope="col">desde las 7 y 30am</th>
                         <th scope="col"><h5>Horario de Atencion</h5></th>
                         </tr>
-                    </thead>  
+                    </thead>
                     <tbody>
                         <tr>
                         <td>desde las 8:00AM</td>
@@ -254,29 +254,29 @@
                         <td>hasta las 17:00PM</td>
                         <td><h5>Horario de cierre</h5></td>
                         </tr>
-                    </tbody>      
+                    </tbody>
                 </table>
-            </div>        
+            </div>
         </div>
-                
-                
+
+
                         <section>
                             <h2>Conéctate con nosotros</h2>
                                 <a href="https://www.facebook.com">
-                                    <img src="https://curmat.000webhostapp.com/img/facebook.png"> 
-                                </a> 
-                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> 
+                                    <img src="https://curmat.000webhostapp.com/img/facebook.png">
+                                </a>
+                                <a href="https://www.youtube.com">
                                     <img src="https://curmat.000webhostapp.com/img/youtube.png">
-                                </a> 
+                                </a>
                         </section>
-                         
-                            
+
+
                             <section>
                                 <div>2020</div>
                                 <div>Todos los derechos y propiedad intelectual de este sitio son de EDISON PACA Y ANGEL ECHEVERRIA</div>
-                            </section> 
-                            
-        
+                            </section>
+
+
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
