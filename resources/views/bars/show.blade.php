@@ -25,7 +25,7 @@
             <input type="text" readonly class="form-control" id="staticEmail" value="{{$bar->nombre}}">
         </div>
                                 <div class="form-group">
-            <label class="col-form-label" for="value">Abierto</label>
+            <label class="col-form-label" for="value">Disponible</label>
             <input type="text" readonly class="form-control" id="staticEmail" value="{{$bar->abierto}}">
         </div>
                                                                     </div>
