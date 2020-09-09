@@ -136,7 +136,7 @@
                     </h1>
                     
                     <div class="portada" style="padding-top: 40px">
-                        <h1 style="font-size: 220%">Tu opinión es importante</h1><br>
+                        <h1 style="font-size: 220%">Tu opinión nos importa</h1><br>
                         <p>Para poder mejorar en nuestra calidad de atencion al cliente</p>
                         <p>necesitamos tu opiniona continuacion<br>puedes ir al apartado de buzon.</p><br>
                         
