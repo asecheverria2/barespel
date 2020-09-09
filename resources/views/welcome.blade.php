@@ -119,6 +119,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="{{route('campuses.index')}}">Reportes</a>
                         <a class="nav-item nav-link" href="{{route('campuses.index')}}">Campus</a>
                         <a class="nav-item nav-link" href="{{route('bars.index')}}">Bares</a>
                         <a class="nav-item nav-link" href="{{route('menus.index')}}">Menu</a>
