@@ -7,6 +7,9 @@ use App\Menu;
 use App\Snack;
 use App\Campus;
 use App\Bar;
+use App\Buzon;
+use App\Preferencia;
+
 class PublicController extends Controller
 {
     public function index(){
@@ -15,7 +18,7 @@ class PublicController extends Controller
         $bars=Bar::all();
         $menus= Menu::all();
         $snacks= Snack::all();
-        return view('welcome',compact('mensaje','menus','snacks','campuses','bars'));
-    }
-    
+        $reportes= Preferencia::all();
+        return view('welcome',compact('mensaje','menus','snacks','campuses','bars','reportes'));
+    }  
 }

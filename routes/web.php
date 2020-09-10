@@ -31,3 +31,4 @@ Route::resource('snacks', 'SnackController');
 Route::resource('menus', 'MenuController');
 Route::resource('preferencias', 'PreferenciaController');
 Route::resource('buzons', 'BuzonController');
+Route::resource('reportes', 'ReporteController');
