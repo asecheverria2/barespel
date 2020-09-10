@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <body background="https://queber.com/wp-content/uploads/2016/08/picjumbo.jpg">
 <div class="container">
     <div class="card">
