@@ -81,8 +81,6 @@
                 background-image: url(https://curmat.000webhostapp.com/img/fondoprincipal.jpg);
                 background-size: cover;
                 }
-            .resto{
-
             }
         </style>
     </head>
