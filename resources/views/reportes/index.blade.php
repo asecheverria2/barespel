@@ -7,35 +7,6 @@
   <h2>REPORTES UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE-L</h2>
   <div class="card-group">
     <div class="card card-primary text-center">
-      <img class="card-img-top" src="https://static3.avast.com/10001215/web/i/index2/for-home.jpg" alt="Card image cap">
-      <div class="card-body">
-        <div class="badge badge-primary badge-sm">REPORTES DOCENTES</div>
-        <div class="card-title">Datos personales del Personal Docente</div>
-      </div>
-      <div class="card-footer">
-        <a href="{{ url('/reportes/docentes') }}" class="btn btn-outline-secondary btn-icon-right">
-          <span>GENERAR REPORTE DOCENTES
-            <img src="https://static3.avast.com/1/web/i/v2/components/arrow-m-right-orange.png" height="24">
-          </span>
-        </a>
-      </div>
-    </div>
-    <div class="card card-primary text-center">
-      <img class="card-img-top" src="https://static3.avast.com/10001215/web/i/index2/for-partners.jpg" alt="Card image cap">
-      <div class="card-body">
-        <div class="badge badge-primary badge-sm">REPORTE MATERIAS</div>
-        <div class="card-title">Datos que exhiben las materias de la UFA</div>
-
-      </div>
-      <div class="card-footer">
-        <a href="{{ url('/reportes/materias') }}" class="btn btn-outline-secondary btn-icon-right">
-          <span>GENERAR REPORTE MATERIAS
-            <img src="https://static3.avast.com/1/web/i/v2/components/arrow-m-right-orange.png" height="24">
-          </span>
-        </a>
-      </div>
-    </div>
-    <div class="card card-primary text-center">
       <img class="card-img-top" src="https://static3.avast.com/10001215/web/i/index2/for-business.jpg" alt="Card image cap">
       <div class="card-body">
         <div class="badge badge-primary badge-sm">REPORTES PERIODO</div>
