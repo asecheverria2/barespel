@@ -25,6 +25,8 @@ class ReportesController extends Controller
     {   
         $bares= Bar::all()->sortBy('nombre');
         $menus=Menu::join('preferencias', 'menus.id', '=', 'preferencias.menu_id')
+        ->join('bars', 'bars.id', '=' , 'menus.bar_id')
+        ->select('bars.nombre as Nom','menus.nombre','preferencias.observacion','preferencias.fecha')
         ->where('menus.bar_id','=',$request->select)
         ->get();
 

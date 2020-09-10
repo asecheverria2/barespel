@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<body background="{{ url('img/fondoReportes.jpg') }}">
+<body background="https://queber.com/wp-content/uploads/2016/08/picjumbo.jpg">
 <div class="container">
 
     <div class="card">
@@ -32,8 +32,24 @@
     
         @if (isset($_GET['submit'])) 
         <?php $cod_mat=0;?>
-        
-        
+        @foreach($menus as $menu)
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th colspan="6">{{$menu->Nom}}  </th>
+                </tr>
+                <tr>
+                    <th>PLATO</th>                                 
+                    <th>OBSERVACION</th>  
+                    <th>FECHA</th>          
+                </tr>
+            </thead>  
+            <tr>
+                <td>{{$menu->nombre}}</td>
+                <td>{{$menu->observacion}}</td>
+                <td>{{$menu->fecha}}</td>
+            </tr>
+        @endforeach
         @endif
     
     
