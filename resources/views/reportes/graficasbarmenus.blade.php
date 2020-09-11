@@ -4,11 +4,11 @@
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
           ['Bar', 'Numero de Menus' ],
           @foreach($bares as $bar)       
           ['{{$bar->nombre}}',{{$bar->Numero}}],
@@ -16,15 +16,22 @@
         ]);
 
         var options = {
-          title: 'Numero de Menus por Bar',
-          hAxis: {title: 'Bar',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
+          title: 'Chess opening moves',
+          width: 900,
+          legend: { position: 'none' },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: 'top', label: '# Platos'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "95%" }
         };
 
-        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
         chart.draw(data, options);
-      }
-    </script>
+      };
+      </script>
   </head>
   
 </html>
@@ -46,20 +53,12 @@
         
         <br>
         <form method="GET" action=" ">
-        <label><strong>Bares</strong></label>
-        <select name="select">
-            @foreach($bars as $bar)
-                <option value="{{$bar->id}}">{{$bar->nombre}}</option> 
-            @endforeach
-        </select>
-        <br>
-        <button  class="btn btn-success"  name='submit' type="submit">Actualizar reporte</button>
+        <button  class="btn btn-success"  name='submit' type="submit">Generar Estadistica</button>
         </form>
 
     </div>
     @if (isset($_GET['submit'])) 
-    
-    <div id="chart_div" class="row-fluid table-responsive" style="width: 100%; height: 500px;"></div>
+    <div id="top_x_div" style="width: 900px; height: 500px; justify-content: center"></div>
     @endif
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -44,10 +44,8 @@ class ReportesController extends Controller
     }
     public function graficasbarmenus(Request $request)
     {
-        $bar_id= $request->select;
         $bars=Bar::all();
         $bares=Bar::leftjoin('menus', 'menus.bar_id', '=' , 'bars.id')
-        ->where('menus.bar_id','=',$bar_id)
         ->select('bars.nombre',DB::raw('count(menus.id) as Numero'))
         ->groupBy('bars.nombre')
         ->get();
