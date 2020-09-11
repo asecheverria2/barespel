@@ -34,3 +34,4 @@ Route::resource('buzons', 'BuzonController');
 Route::get('reportes', 'ReportesController@index')->name('reportes.index');
 Route::get('reportes/barpreferencias', 'ReportesController@barpreferencias')->name('reportes.barpreferencias');
 Route::get('reportes/buzonbar', 'ReportesController@buzonbar')->name('reportes.buzonbar');
+Route::get('reportes/graficasbarmenus', 'ReportesController@graficasbarmenus')->name('reportes.graficasbarmenus');

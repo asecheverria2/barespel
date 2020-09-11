@@ -8,7 +8,7 @@ use App\Campus;
 use App\Menu;
 use App\Preferencias;
 use App\Snack;
-
+use Illuminate\Support\Facades\DB;
 
 class ReportesController extends Controller
 {
@@ -29,7 +29,6 @@ class ReportesController extends Controller
         ->select('bars.nombre as Nom','menus.nombre','preferencias.observacion','preferencias.fecha')
         ->where('menus.bar_id','=',$request->select)
         ->get();
-
         return view('reportes.barpreferencias',compact('bares','menus'));
        
     }
@@ -41,8 +40,17 @@ class ReportesController extends Controller
         ->select('bars.nombre as Nom','campuses.nombre','buzons.fecha','buzons.descripcion')
         ->where('buzons.bar_id','=',$request->select)
         ->get();
-
         return view('reportes.buzonbar',compact('bares','buzons'));
-       
+    }
+    public function graficasbarmenus(Request $request)
+    {
+        $bar_id= $request->select;
+        $bars=Bar::all();
+        $bares=Bar::leftjoin('menus', 'menus.bar_id', '=' , 'bars.id')
+        ->where('menus.bar_id','=',$bar_id)
+        ->select('bars.nombre',DB::raw('count(menus.id) as Numero'))
+        ->groupBy('bars.nombre')
+        ->get();
+        return view('reportes.graficasbarmenus',compact('bares','bars'));     
     }
 }
