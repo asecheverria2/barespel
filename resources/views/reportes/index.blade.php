@@ -45,7 +45,7 @@
 
       </div>
       <div class="card-footer">
-        <a href="{{ url('/reportes/guiaclases') }}" class="btn btn-outline-secondary btn-icon-right">
+        <a href="{{ url('/reportes/buzonbar') }}" class="btn btn-outline-secondary btn-icon-right">
           <span>LISTA DE GUIAS POR CARRERA
             <img src="https://static3.avast.com/1/web/i/v2/components/arrow-m-right-orange.png" height="24">
           </span>

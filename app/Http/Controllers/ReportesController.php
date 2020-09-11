@@ -33,4 +33,16 @@ class ReportesController extends Controller
         return view('reportes.barpreferencias',compact('bares','menus'));
        
     }
+    public function buzonbar(Request $request)
+    {   
+        $bares= Bar::all()->sortBy('nombre');
+        $buzons=Buzon::join('bars', 'bars.id', '=', 'buzons.bar_id')
+        ->join('campuses', 'campuses.id', '=' , 'bars.campus_id')
+        ->select('bars.nombre as Nom','campuses.nombre')
+        ->where('buzons.bar_id','=',$request->select)
+        ->get();
+
+        return view('reportes.buzonbar',compact('bares','buzons'));
+       
+    }
 }
