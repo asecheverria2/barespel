@@ -31,25 +31,32 @@
     </div>
     
         @if (isset($_GET['submit'])) 
-        <?php $cod_mat=0;?>
+        <?php $cod_bar=5;?>
         @foreach($buzons as $buzon)
+        @if ($cod_bar !=0 and $buzon->bar_id != $cod_bar) 
+            </table>
+        @endif
+        @if ($cod_bar != $buzon->bar_id)
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th colspan="6">Campus:{{$buzon->nombre}} Bar:{{$buzon->Nom}}  </th>
+                    <th colspan="6">Campus: {{$buzon->nombre}}    <br> Bar: {{$buzon->Nom}}  </th>
                 </tr>
                 <tr>
                     <th>FECHA</th>
                     <th>DESCRIPCION</th>                                              
                 </tr>
             </thead>  
+        @endif
             <tr>
                 <td>{{$buzon->fecha}}</td>
                 <td>{{$buzon->descripcion}}</td>
             </tr>
+            <?php $cod_bar = $buzon->bar_id;?>
         @endforeach
+        </table>
         @endif
-    
+        
     
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
