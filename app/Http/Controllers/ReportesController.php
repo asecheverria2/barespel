@@ -38,7 +38,7 @@ class ReportesController extends Controller
         $bares= Bar::all()->sortBy('nombre');
         $buzons=Buzon::join('bars', 'bars.id', '=', 'buzons.bar_id')
         ->join('campuses', 'campuses.id', '=' , 'bars.campus_id')
-        ->select('bars.nombre as Nom','campuses.nombre')
+        ->select('bars.nombre as Nom','campuses.nombre','buzons.fecha','buzons.descripcion')
         ->where('buzons.bar_id','=',$request->select)
         ->get();
 
